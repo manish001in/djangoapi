@@ -6,6 +6,8 @@ from REST.views import DetailViewSet, UserViewSet
 from rest_framework import renderers
 from rest_framework.routers import DefaultRouter
 import logging
+from django.views.static import serve
+from newApp import settings
 
 router = DefaultRouter()
 router.register(r'detail', views.DetailViewSet)
@@ -15,8 +17,8 @@ logger = logging.getLogger(__name__)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^login/', include('rest_framework.urls',
-                               namespace='rest_framework')),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+    url(r'^login/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
 

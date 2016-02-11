@@ -8,7 +8,7 @@ class RESTSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = REST
-        fields = ('url', 'owner', 'name', 'designation', 'alive')
+        fields = ('url', 'owner', 'name', 'designation', 'alive', 'data')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

@@ -66,7 +66,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+                'django.core.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                ],
         },
     },
 ]
@@ -120,6 +124,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+MEDIA_ROOT = '/home/manish.rastogi/PycharmProjects/newApp/REST/media/'
+
+MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 

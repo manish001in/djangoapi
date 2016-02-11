@@ -7,7 +7,7 @@ class REST(models.Model):
     name = models.CharField(max_length=100, blank=True, default='')
     designation = models.TextField()
     alive = models.BooleanField(default=False)
-
+    data = models.FileField(default="", upload_to='uploads/')
 
     class Meta:
         ordering = ('created',)
